@@ -52,6 +52,7 @@ useful for drawing 3d-seeming buttons.
 #- source
 %doc %{_texmfdistdir}/source/generic/pst-fr3d/pst-fr3d.dtx
 %doc %{_texmfdistdir}/source/generic/pst-fr3d/pst-fr3d.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -62,3 +63,5 @@ useful for drawing 3d-seeming buttons.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
