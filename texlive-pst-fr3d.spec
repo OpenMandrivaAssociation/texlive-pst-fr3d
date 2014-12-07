@@ -6,7 +6,7 @@
 # catalog-version 1.10
 Name:		texlive-pst-fr3d
 Version:	1.10
-Release:	8
+Release:	9
 Summary:	Draw 3-dimensional framed boxes using PSTricks
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-fr3d
