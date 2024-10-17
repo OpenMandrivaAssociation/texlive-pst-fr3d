@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Draw 3-dimensional framed boxes using PSTricks
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-fr3d
+URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-fr3d
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.doc.r%{version}.tar.xz
