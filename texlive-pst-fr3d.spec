@@ -1,49 +1,23 @@
-Name:		texlive-pst-fr3d
-Version:	15878
-Release:	2
+%global tl_name pst-fr3d
+%global tl_revision 15878
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.10
+Release:	%{tl_revision}.1
 Summary:	Draw 3-dimensional framed boxes using PSTricks
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-fr3d
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.source.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-fr3d.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A package using PSTricks to draw three dimensional framed boxes
-using a macro \PstFrameBoxThreeD. The macro is especially
-useful for drawing 3d-seeming buttons.
+A package using PSTricks to draw three dimensional framed boxes using a
+macro \PstFrameBoxThreeD. The macro is especially useful for drawing
+3d-seeming buttons.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/pst-fr3d/pst-fr3d.tex
-%{_texmfdistdir}/tex/latex/pst-fr3d/pst-fr3d.sty
-%doc %{_texmfdistdir}/doc/generic/pst-fr3d/Changes
-%doc %{_texmfdistdir}/doc/generic/pst-fr3d/README
-%doc %{_texmfdistdir}/doc/generic/pst-fr3d/pst-fr3d.pdf
-#- source
-%doc %{_texmfdistdir}/source/generic/pst-fr3d/pst-fr3d.dtx
-%doc %{_texmfdistdir}/source/generic/pst-fr3d/pst-fr3d.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
